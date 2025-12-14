@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "Create new block",
+      "method": "POST",
+      "body": {
+        "page_id": 1,
+        "type": "hero",
+        "content": {"text": "Hello World"},
+        "styles": {},
+        "position": 0
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "id": "number",
+        "type": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get page blocks",
+      "method": "GET",
+      "path": "/?page_id=1",
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    }
+  ]
+}

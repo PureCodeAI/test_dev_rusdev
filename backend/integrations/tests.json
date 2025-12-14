@@ -1,0 +1,32 @@
+{
+  "tests": [
+    {
+      "name": "Test create integration",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "block_id": 1,
+        "integration_type": "email",
+        "config": {
+          "to_email": "admin@example.com",
+          "subject": "New form submission"
+        },
+        "is_active": true
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "id": "number",
+        "block_id": 1,
+        "integration_type": "email"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test get integrations for block",
+      "method": "GET",
+      "path": "/?block_id=1",
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    }
+  ]
+}

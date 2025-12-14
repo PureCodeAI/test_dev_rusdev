@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "Create new project",
+      "method": "POST",
+      "body": {
+        "name": "Test Site",
+        "type": "site",
+        "user_id": 1
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "project": {
+          "id": "number",
+          "name": "string",
+          "type": "string"
+        },
+        "page_id": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get user projects",
+      "method": "GET",
+      "path": "/?user_id=1",
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    }
+  ]
+}

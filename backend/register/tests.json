@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "name": "Successful registration",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "fullName": "Test User",
+        "email": "test@example.com",
+        "phone": "+7 (999) 123-45-67",
+        "password": "testpass123",
+        "userType": "entrepreneur"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "token": "string",
+        "userId": "number",
+        "fullName": "string",
+        "email": "string",
+        "userType": "string",
+        "balance": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
